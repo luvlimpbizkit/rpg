@@ -4,12 +4,15 @@ using static System.Net.Mime.MediaTypeNames;
 namespace ConsoleApp3
 {
     internal class Program
-    {      
-        
+    {
+
         static void Main(string[] args)
         {
-            
-        
+            int h;
+
+          h = (int)inputValue();
+
+
             //Display a welcome screen
             WelcomeScreen();
             //Continue game
@@ -26,8 +29,8 @@ namespace ConsoleApp3
             myName = Console.ReadLine();
             Console.WriteLine("welcome " + myName);
 
-             
-            
+
+
             Console.WriteLine("you see 2 paths type left or right");
             //Console.ReadLine();
             pathDirection = Console.ReadLine();
@@ -36,7 +39,7 @@ namespace ConsoleApp3
             {
                 Console.WriteLine("on the left you see someone");
             }
-            else 
+            else
             {
                 Console.WriteLine("on the right you see a house");
             }
@@ -112,75 +115,78 @@ namespace ConsoleApp3
                         {
                             Console.WriteLine("not a valid number");
                         }
-                        
-                        
                     }
-            else if (colouredDoor.Equals("blue"))
-            {
-                Console.WriteLine("you go into the blue door and see a person");
-                Console.WriteLine("stranger: hello officer what can i do for you today");
-                Console.WriteLine("option1: can i see your id. option2: analyse looks. option3: use different items picked up or option4: leave");
-
-                //Console.ReadLine();
-                bool isValidChoice = false;
-
-                while (isValidChoice == false)
-                {
-
-                    
-                    choice = Console.ReadLine();
 
 
-
-                        if (choice.Equals("1"))
-                        {
-                            Console.WriteLine("it is a normal id");
-                        }
-                        else if (choice.Equals("2"))
-                        {
-                            Console.WriteLine("he looks normal");
-                        }
-                        else if (choice.Equals("3"))
-                        {
-                            Console.WriteLine("checking if you have any equipment");
-                            if (crucifixPickup.Equals("yes"))
-                            {
-                                Console.WriteLine("you use a crucifix and it does not effect him");
-                            }
-                            else if (crucifixPickup.Equals("no"))
-                            {
-                                Console.WriteLine("you do not have any equipment to use on him");
-                            }
-                        }
-                        else if (choice.Equals("4"))
-                        {
-                            Console.WriteLine("you left");
-                            isValidChoice = true;
-
-                        }
-
-        
-                    else
+                    }
+                else if (colouredDoor.Equals("blue"))
                     {
-                        Console.WriteLine("not a valid number");
-                    }
+                        Console.WriteLine("you go into the blue door and see a person");
+                        Console.WriteLine("stranger: hello officer what can i do for you today");
+                        Console.WriteLine("option1: can i see your id. option2: analyse looks. option3: use different items picked up or option4: leave");
+
+                        //Console.ReadLine();
+                        bool isValidChoice = false;
+
+                        while (isValidChoice == false)
+                        {
+
+
+                            choice = Console.ReadLine();
+
+
+
+                            if (choice.Equals("1"))
+                            {
+                                Console.WriteLine("it is a normal id");
+                            }
+                            else if (choice.Equals("2"))
+                            {
+                                Console.WriteLine("he looks normal");
+                            }
+                            else if (choice.Equals("3"))
+                            {
+                                Console.WriteLine("checking if you have any equipment");
+                                if (crucifixPickup.Equals("yes"))
+                                {
+                                    Console.WriteLine("you use a crucifix and it does not effect him");
+                                }
+                                else if (crucifixPickup.Equals("no"))
+                                {
+                                    Console.WriteLine("you do not have any equipment to use on him");
+                                }
+                            }
+                            else if (choice.Equals("4"))
+                            {
+                                Console.WriteLine("you left");
+                                isValidChoice = true;
+
+                            }
+
+
+                            else
+                            {
+                                Console.WriteLine("not a valid number");
+                            }
+                        }
+
+
+
                 }
 
-  
+                else if (colouredDoor.Equals("green"))
+                    {
+                        Console.WriteLine("you go into the green door and see nothing, try somewhere else");
+                    }
 
-            }
+                else
+                    {
+                        Console.WriteLine("no such door colour");
+                    }
+             
 
-            else if (colouredDoor.Equals("green"))
-            {
-                Console.WriteLine("you go into the green door and see nothing, try somewhere else");
-            }
-
-            else
-            {
-                Console.WriteLine("no such door colour");
             }
         }
-
 
         // .NET can only read single characters or entire lines from the
         // console. The following function safely reads a double value.
@@ -189,6 +195,25 @@ namespace ConsoleApp3
             double result;
             while (!double.TryParse(Console.ReadLine(), out result)) ;
             return result;
+        }
+
+
+
+        public static int AddNumbers(int n1, int n2)
+        {
+            int result = n1 + n2;
+            if (result <= 10)
+            {
+                result = 0;
+            }
+            return result;
+        }
+
+        public static void h(int j)
+        {
+            Console.WriteLine("hi" + j);
+            Console.WriteLine("e");
+            Console.WriteLine("w");
         }
 
         public static void WelcomeScreen()
@@ -211,4 +236,9 @@ __/_  /   \ ______/ ''   /'\_,__
         }
 
     }
+
+
+
+
 }
+   
